@@ -1,0 +1,44 @@
+<br><br>
+<form action="" [formGroup]="formNuevoUsuario" (ngSubmit) ="guardar()">
+    <label for="">Nombre:</label>
+    <input type="text" formControlName="nombre">
+<br>
+    
+    <label for="">Apellido:</label>
+    <input type="text" formControlName="apellidos">
+    <br>
+    
+    <label for="">Genero:<br>
+    <input type="radio" formControlName="genero" value="masculino">Masculino:
+    <input type="radio" formControlName="genero" value="femenino">Femenino:
+    </label>
+    <br>
+    
+    <label for="">Correo:</label>
+
+    <div formGroupName="direccion">
+
+        <br>
+        <label for="">Calle:</label>
+        <input type="text" formControlName="calle">
+        <br>
+    <label for="">Ciudad:</label>
+    <input type="text" formControlName="ciudad">
+
+    <br>
+    <label for="">Estado:</label>
+    <input type="text" formControlName="estado">
+
+    <br>
+    <label for="">CodigoPostal:</label>
+    <input type="text" formControlName="codigoPostal">
+<br><br>
+
+    <button type="submit">Enviar</button>
+    </div>
+    <hr>
+    
+</form>
+
+<p>Form Value: {{ formNuevoUsuario.value | json }}</p>
+<p>Form Value: {{ formNuevoUsuario.status }}</p>
